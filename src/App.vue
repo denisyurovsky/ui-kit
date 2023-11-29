@@ -1,6 +1,6 @@
 <script setup>
-import layout from "./components/layout.vue";
-import LayoutSidebar from "./components/LayoutSidebar.vue";
+import layout from "@/components/layout.vue";
+import LayoutSidebar from "@/components/LayoutSidebar.vue";
 import { ref } from "vue";
 const isMenuOpen = ref(false);
 </script>
@@ -9,7 +9,7 @@ const isMenuOpen = ref(false);
   <div class="container">
     <div @click="isMenuOpen = !isMenuOpen" class="sidebar-toggle">&#5125;</div>
     <layout />
-    <LayoutSidebar :isOpen="isMenuOpen" />
+    <LayoutSidebar :isOpen="isMenuOpen" @link-clicked="isMenuOpen = false" />
     <div class="content" :class="{ content_full: !isMenuOpen }">
       <router-view />
     </div>
