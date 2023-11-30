@@ -1,15 +1,23 @@
 <template>
-  <input
-    class="checkbox"
-    type="checkbox"
-    :name="name"
-    :id="id"
-    :value="value"
-    :checked="modelValue"
-    @input="handleCheck"
-    :disabled="disabled"
-  />
-  <label :for="id">{{ label }}</label>
+  <div :class="[{ 'switch-container': type == 'switch' }]">
+    <input
+      :class="[
+        { checkbox: type === 'checkbox' },
+        { switch: type === 'switch' },
+      ]"
+      type="checkbox"
+      :name="name"
+      :id="id"
+      :value="value"
+      :checked="modelValue"
+      @input="handleCheck"
+      :disabled="disabled"
+    />
+    <label :for="id">{{ label }}</label>
+    <label v-if="type == 'switch'" :for="id" class="switch__label">{{
+      label
+    }}</label>
+  </div>
 </template>
 
 <script setup>
@@ -40,6 +48,10 @@ const props = defineProps({
   group: {
     type: Boolean,
     default: false,
+  },
+  type: {
+    type: String,
+    default: "checkbox",
   },
 });
 
@@ -104,7 +116,6 @@ const handleCheck = (e) => {
     border: 1px solid #ecebed;
   }
 }
-
 .switch {
   height: 0;
   width: 0;

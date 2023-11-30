@@ -2,6 +2,7 @@ import MainPage from "@/views/MainPage.vue";
 import ButtonView from "@/views/ButtonView.vue";
 import TypographyView from "@/views/TypographyView.vue";
 import CheckboxView from "@/views/CheckboxView.vue";
+import RadiobuttonView from "@/views/RadiobuttonView.vue";
 
 const routes = [
   {
@@ -26,6 +27,11 @@ const routes = [
     name: "checkbox",
     path: "/checkbox",
     component: CheckboxView,
+  },
+  {
+    name: "radiobutton",
+    path: "/radiobutton",
+    component: RadiobuttonView,
   },
 ];
 
