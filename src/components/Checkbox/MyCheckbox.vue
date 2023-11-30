@@ -13,7 +13,6 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 const props = defineProps({
   name: {
     type: String,
@@ -24,7 +23,6 @@ const props = defineProps({
     default: "",
   },
   value: {
-    type: String,
     default: "",
   },
   label: {
@@ -32,9 +30,15 @@ const props = defineProps({
     default: "",
   },
   modelValue: {
+    type: Boolean,
     default: false,
   },
   disabled: {
+    type: Boolean,
+    default: false,
+  },
+  group: {
+    type: Boolean,
     default: false,
   },
 });
@@ -42,7 +46,14 @@ const props = defineProps({
 const emit = defineEmits(["update:modelValue"]);
 
 const handleCheck = (e) => {
-  emit("update:modelValue", e.target.checked);
+  if (props.group) {
+    emit("update:modelValue", {
+      value: props.value,
+      checked: e.target.checked,
+    });
+  } else {
+    emit("update:modelValue", e.target.checked);
+  }
 };
 </script>
 

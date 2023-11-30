@@ -10,12 +10,31 @@
   {{ isActive }}
   <h1 class="heading">disabled</h1>
   <MyCheckbox disabled />
+  <h1 class="heading">checkbox group</h1>
+  <MyCheckboxGroup v-model="selectedProducts" :options="products" />
+  You've chosen: {{ selectedProducts.map((item) => item.name).join(", ") }}
 </template>
 
 <script setup>
 import MyCheckbox from "@/components/Checkbox/MyCheckbox.vue";
+import MyCheckboxGroup from "@/components/Checkbox/MyCheckboxGroup.vue";
 import { ref } from "vue";
 const isActive = ref(false);
+const selectedProducts = ref([]);
+const products = ref([
+  {
+    name: "bread",
+    id: "213",
+  },
+  {
+    name: "milk",
+    id: "21354",
+  },
+  {
+    name: "butter",
+    id: "3213",
+  },
+]);
 </script>
 
 <style lang="scss" scoped></style>
