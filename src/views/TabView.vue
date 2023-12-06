@@ -2,7 +2,7 @@
   <h1 class="heading">Tabs</h1>
   <Tabs v-slot="{ activeTab }" :names="tabs">
     <div v-if="activeTab == 'vue'">vue vue vue</div>
-    <div v-if="activeTab == 'about'">about project blah blah</div>
+    <div v-if="activeTab == 'about'">about project blah blah blah</div>
   </Tabs>
 </template>
 
