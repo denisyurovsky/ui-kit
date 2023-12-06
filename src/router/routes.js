@@ -4,6 +4,7 @@ import TypographyView from "@/views/TypographyView.vue";
 import CheckboxView from "@/views/CheckboxView.vue";
 import RadiobuttonView from "@/views/RadiobuttonView.vue";
 import ProgressView from "@/views/ProgressView.vue";
+import InputView from "@/views/InputView.vue";
 
 const routes = [
   {
@@ -38,6 +39,11 @@ const routes = [
     name: "progressbar",
     path: "/progressbar",
     component: ProgressView,
+  },
+  {
+    name: "inputs",
+    path: "/inputs",
+    component: InputView,
   },
 ];
 
