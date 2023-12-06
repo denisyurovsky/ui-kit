@@ -5,6 +5,7 @@ import CheckboxView from "@/views/CheckboxView.vue";
 import RadiobuttonView from "@/views/RadiobuttonView.vue";
 import ProgressView from "@/views/ProgressView.vue";
 import InputView from "@/views/InputView.vue";
+import TabView from "@/views/TabView.vue";
 
 const routes = [
   {
@@ -44,6 +45,11 @@ const routes = [
     name: "inputs",
     path: "/inputs",
     component: InputView,
+  },
+  {
+    name: "tabs",
+    path: "/tabs",
+    component: TabView,
   },
 ];
 
